@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container">
+    <h1 class='text-center text-info'>Employee Data</h1>
+    <a href="{% url 'mainpage' %}" class='btn btn-warning'>main_page</a>
+      {% if data %}
+      <table class= 'table table-bordered'>
+        <thead class='bg-success text-white'>
+          <tr>
+            <th>ID</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>salary</th>
+            <th>job</th>
+            <th>company</th>
+            <th>location</th>
+          </tr>
+        </thead>
+        <tbody class='bg-dark text-white'>
+          {% for i in data %}
+          <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.first_name }}</td>
+            <td>{{ i.last_name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.salary }}</td>
+            <td>{{ i.job }}</td>
+            <td>{{ i.company }}</td>
+            <td>{{ i.location }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      {% endif %}
+
+    </div>
+  </body>
+</html>

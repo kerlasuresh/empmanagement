@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+    <style media="screen">
+      a{
+        margin-left:140px;
+      }
+    </style>
+  </head>
+  <body class='bg-info'><br><br><br><br><br><br>
+    <div class="jumbotron container bg-success">
+      <a href="{% url 'hyddata' %}" class='btn bg-primary text-white'>hyderabad</a>
+      <a href="{% url 'bangdata' %}" class='btn bg-warning text-white'>banglore</a>
+      <a href="{% url 'chennai' %}" class='btn bg-danger text-white'>chennia</a>
+      <a href="{% url 'punedata' %}" class='btn bg-dark text-white'>pune</a>
+    </div>
+  </body>
+</html>

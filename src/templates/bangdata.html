@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <br><div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="{% static 'images/bng1.jpg' %}" class='img-thumbnail bg-danger'>
+            </div>
+            <div class="col-md-3">
+              <img src="{% static 'images/bng2.jpg' %}" class='img-thumbnail bg-danger'>
+            </div>
+            <div class="col-md-3">
+              <img src="{% static 'images/bng3.jpg' %}" class='img-thumbnail bg-danger'>
+            </div>
+            <div class="col-md-3">
+              <img src="{% static 'images/bng4.jpg' %}" class='img-thumbnail bg-danger'>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="companyName" placeholder="Serch Here" >
+                <input type="submit" class="btn btn-info" value="Search">
+              </form>
+            </div>
+            <div class="col-md-8">
+              <h1 class='text-warning'>Banglore Data Employee Data</h1>
+            </div>
+          </div>
+        </div>
+
+    <div class="container">
+    
+      {% if bangdata %}
+      <table class= 'table table-bordered'>
+        <thead class='bg-success text-white'>
+          <tr>
+            <th>ID</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>salary</th>
+            <th>job</th>
+            <th>company</th>
+            <th>location</th>
+          </tr>
+        </thead>
+        <tbody class='bg-dark text-white'>
+          {% for i in bangdata %}
+          <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.first_name }}</td>
+            <td>{{ i.last_name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.salary }}</td>
+            <td>{{ i.job }}</td>
+            <td>{{ i.company }}</td>
+            <td>{{ i.location }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      {% endif %}
+
+    </div>
+  </body>
+</html>
