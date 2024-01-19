@@ -74,12 +74,22 @@ WSGI_APPLICATION = 'employee6pmdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'emp_management',
+#         'USER': 'root',
+#         'PASSWORD': 'potgres'
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'emp_db',
-        'USER': 'root',
-        'PASSWORD': 'vitel@123'
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "HOST": "localhost",
+        "NAME": "emp_management",
+        "USER": "postgres",
+        "PASSWORD": "",
+        "PORT": 5432,
     }
 }
 
